@@ -7,6 +7,7 @@ from spyne.model.primitive import Unicode, Integer, String, Date
 
 # Create your models here.
 
+
 # DJANGO MODELS
 class Customer(models.Model):
     first_name = models.CharField(max_length=50)
@@ -22,7 +23,6 @@ class Customer(models.Model):
                      birth_certificate_no, birthday, address):
         today = date.today()
         age = today.year - birthday.year - ((today.month, today.day) < (birthday.month, birthday.day))
-        print(age)
         if age < 18:
             return http.HTTP_409, 'Minimal age to subscribe is 18.'
         else:
@@ -50,7 +50,6 @@ class CustomerService(models.Model):
     phone_number = models.CharField(max_length=25)
     service_name = models.CharField(max_length=50)
 
-
     @classmethod
     def add_service(cls, customer_id, phone_number, service_name):
         customer_service = cls.objects.create(
@@ -60,9 +59,8 @@ class CustomerService(models.Model):
         )
         return http.HTTP_201, f'New service ID: {customer_service.id}'
 
+
 # SPYNE MODELS (USED TO RETURN DATA)
-
-
 class CustomerModel(ComplexModel):
     id = Integer
     first_name = String

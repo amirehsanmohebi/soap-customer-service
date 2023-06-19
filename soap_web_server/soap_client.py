@@ -8,19 +8,19 @@ from datetime import date
 my_client = Client('http://127.0.0.1:8000/soap_service/customers/?WSDL', cache=NoCache())
 
 # ADD CUSTOMER
-# print('Function Add Customer: ', my_client.service.add_customer('Mohamad',
-#                                                          'najarzade',
-#                                                          '0674690494',
-#                                                          'heshmat',
-#                                                          '0674690494',
-#                                                          date(year=1990, month=1, day=25),
-#                                                          'Azadi St, yadegar emam, No4'
-#                                                          ))
+print('Function Add Customer: ', my_client.service.add_customer('Mohamad',
+                                                         'najarzade',
+                                                         '0674690494',
+                                                         'heshmat',
+                                                         '0674690494',
+                                                         date(year=1990, month=1, day=25),
+                                                         'Azadi St, yadegar emam, No4'
+                                                         ))
 # ADD SERVICE
-# print('Function Add Customer: ', my_client.service.add_service(1,
-#                                                          '09056585478',
-#                                                          'service1',
-#                                                          ))
+print('Function Add Customer: ', my_client.service.add_service(1,
+                                                         '09056585478',
+                                                         'service1',
+                                                         ))
 
 # GET CUSTOMER [RETURNS A LIST OF CUSTOMERS AS DEFAULT, BUT ALSO ACCEPTS CUSTOMER_ID SEARCH]
 print('Function Get Customer(s) Without customer_id param: ', my_client.service.get_customers())
