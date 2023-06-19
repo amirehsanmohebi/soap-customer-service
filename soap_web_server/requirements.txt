@@ -1,0 +1,6 @@
+Django==4.2.2
+python-dotenv==1.0.0
+spyne==2.14.0
+suds_jurko==0.6
+lxml==4.9.2
+psycopg==2.9.6
